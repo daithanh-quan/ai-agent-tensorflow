@@ -12,7 +12,6 @@ const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
     {...props}
   />
 );
-Pagination.displayName = "Pagination";
 
 const PaginationContent = React.forwardRef<
   HTMLUListElement,
@@ -30,12 +29,13 @@ const PaginationItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<"li">
 >(({ className, ...props }, ref) => (
-  <li ref={ref} className={cn("", className)} {...props} />
+  <li ref={ref} className={cn("hover:cursor-pointer", className)} {...props} />
 ));
 PaginationItem.displayName = "PaginationItem";
 
 type PaginationLinkProps = {
   isActive?: boolean;
+  disabled?: boolean;
 } & Pick<ButtonProps, "size"> &
   React.ComponentProps<"a">;
 
@@ -43,15 +43,19 @@ const PaginationLink = ({
   className,
   isActive,
   size = "icon",
+  disabled = false,
   ...props
 }: PaginationLinkProps) => (
   <a
     aria-current={isActive ? "page" : undefined}
+    role="link"
+    aria-disabled={disabled}
     className={cn(
       buttonVariants({
-        variant: isActive ? "outline" : "ghost",
+        variant: isActive ? "default" : "ghost",
         size,
       }),
+      disabled && "cursor-not-allowed pointer-events-none",
       className
     )}
     {...props}
@@ -89,7 +93,6 @@ const PaginationNext = ({
     <ChevronRight className="h-4 w-4" />
   </PaginationLink>
 );
-PaginationNext.displayName = "PaginationNext";
 
 const PaginationEllipsis = ({
   className,
@@ -104,14 +107,13 @@ const PaginationEllipsis = ({
     <span className="sr-only">More pages</span>
   </span>
 );
-PaginationEllipsis.displayName = "PaginationEllipsis";
 
 export {
   Pagination,
   PaginationContent,
-  PaginationLink,
-  PaginationItem,
-  PaginationPrevious,
-  PaginationNext,
   PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
 };
