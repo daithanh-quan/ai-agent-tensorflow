@@ -1,13 +1,15 @@
 import React from "react";
+
+import { cn } from "src/lib/utils";
+
 import {
   Dialog,
+  DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogContent,
   DialogTrigger,
-  DialogDescription,
 } from "./dialog";
-import { cn } from "src/lib/utils";
 
 type Props = {
   trigger?: React.ReactNode | string;
@@ -22,7 +24,7 @@ type Props = {
   }: {
     open: boolean;
     setOpen: (open: boolean) => void;
-  }) => React.ReactNode | React.ReactNode | string;
+  }) => React.ReactNode | string;
   closeOutSide?: boolean;
   position?: "bl" | "bc" | "br" | "tl" | "tc" | "tr";
   size?: "sm" | "md" | "lg" | "xl" | "fullscreen";

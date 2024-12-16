@@ -1,13 +1,10 @@
 import React from "react";
+
 import { flexRender } from "@tanstack/react-table";
+
 import { HeaderTableProps, TableProps } from "src/components/tables/interface";
+import { TableHead, TableHeader, TableRow } from "src/components/ui/table";
 import { cn } from "src/lib/utils";
-import {
-  TableHeader,
-  TableCell,
-  TableRow,
-  TableHead,
-} from "src/components/ui/table";
 
 type Props<TData> = {} & HeaderTableProps<TData> &
   Pick<
@@ -41,15 +38,15 @@ const Thead = <TData,>({
                         ? header.column.getNextSortingOrder() === "asc"
                           ? "Sort ascending"
                           : header.column.getNextSortingOrder() === "desc"
-                          ? "Sort descending"
-                          : "Clear sort"
+                            ? "Sort descending"
+                            : "Clear sort"
                         : undefined
                     }
                   >
                     {
                       flexRender(
                         header.column.columnDef.header,
-                        header.getContext()
+                        header.getContext(),
                       ) as string
                     }
                     {{

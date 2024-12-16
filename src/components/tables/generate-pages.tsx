@@ -1,16 +1,17 @@
 "use client";
 
+import { JSX } from "react";
+
 import {
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
 } from "src/components/ui/pagination";
-import { JSX } from "react";
 
 export const generatePaginationLinks = (
   currentPage: number,
   totalPages: number,
-  onPageChange: (page: number) => void
+  onPageChange: (page: number) => void,
 ) => {
   const pages: JSX.Element[] = [];
   if (totalPages <= 6) {
@@ -23,7 +24,7 @@ export const generatePaginationLinks = (
           >
             {i}
           </PaginationLink>
-        </PaginationItem>
+        </PaginationItem>,
       );
     }
   } else {
@@ -36,7 +37,7 @@ export const generatePaginationLinks = (
           >
             {i}
           </PaginationLink>
-        </PaginationItem>
+        </PaginationItem>,
       );
     }
     if (2 < currentPage && currentPage < totalPages - 1) {
@@ -49,7 +50,7 @@ export const generatePaginationLinks = (
           >
             {currentPage}
           </PaginationLink>
-        </PaginationItem>
+        </PaginationItem>,
       );
     }
     pages.push(<PaginationEllipsis />);
@@ -62,7 +63,7 @@ export const generatePaginationLinks = (
           >
             {i}
           </PaginationLink>
-        </PaginationItem>
+        </PaginationItem>,
       );
     }
   }

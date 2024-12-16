@@ -1,5 +1,6 @@
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { useCallback, useMemo } from "react";
+
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 /**
  * Options for history manipulation
@@ -50,7 +51,7 @@ export function useHistory() {
   const constructUrl = useCallback(
     (
       pathname: string,
-      params?: Record<string, string | number | boolean | null | undefined>
+      params?: Record<string, string | number | boolean | null | undefined>,
     ) => {
       const searchParamsInstance = new URLSearchParams();
 
@@ -69,7 +70,7 @@ export function useHistory() {
       const searchString = searchParamsInstance.toString();
       return searchString ? `${pathname}?${searchString}` : pathname;
     },
-    []
+    [],
   );
 
   /**
@@ -93,7 +94,7 @@ export function useHistory() {
         router.push(url, { scroll });
       }
     },
-    [router, currentPathName, constructUrl]
+    [router, currentPathName, constructUrl],
   );
 
   /**
@@ -103,7 +104,7 @@ export function useHistory() {
     (options: HistoryOptions = {}) => {
       push({ ...options, replace: true });
     },
-    [push]
+    [push],
   );
 
   /**
@@ -113,7 +114,7 @@ export function useHistory() {
     (
       options: Omit<HistoryOptions, "params"> & {
         keys?: string[];
-      } = {}
+      } = {},
     ) => {
       const { pathName = currentPathName, scroll = true, keys } = options;
 
@@ -132,7 +133,7 @@ export function useHistory() {
 
       router.replace(url, { scroll });
     },
-    [router, currentPathName, createSearchParams]
+    [router, currentPathName, createSearchParams],
   );
 
   return useMemo(
@@ -141,6 +142,6 @@ export function useHistory() {
       replace,
       reset,
     }),
-    [push, replace, reset]
+    [push, replace, reset],
   );
 }

@@ -1,19 +1,21 @@
 "use client";
 
 import React, { Fragment } from "react";
+
+import { ColumnDef, TableOptions } from "@tanstack/react-table";
 import { toast } from "sonner";
 
+import Table from "src/components/tables";
 import { Button } from "src/components/ui/button";
+import { Checkbox } from "src/components/ui/checkbox";
 import Modal from "src/components/ui/modal";
 import { useHistory } from "src/hooks/useHistory";
-import { useQuery } from "src/hooks/useQuery";
-import Table from "src/components/tables";
-import { Checkbox } from "src/components/ui/checkbox";
-import { ColumnDef, TableOptions } from "@tanstack/react-table";
+
+// import { useQuery } from "src/hooks/useQuery";
 
 export default function Home() {
   const { push, reset, replace } = useHistory();
-  const { name } = useQuery();
+  // const { name } = useQuery();
   const [rowSelection, setRowSelection] = React.useState({});
 
   const columns: ColumnDef<unknown, unknown>[] = [
@@ -52,80 +54,80 @@ export default function Home() {
     },
   ];
 
-  const data = [
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "489e1d42",
-      amount: 125,
-      status: "processing",
-      email: "example@gmail.com",
-    },
-    {
-      id: "728ed52fe",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "489e1d42a",
-      amount: 125,
-      status: "processing",
-      email: "example@gmail.com",
-    },
-    {
-      id: "728ed52fa",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "489e1d42b",
-      amount: 125,
-      status: "processing",
-      email: "example@gmail.com",
-    },
-    {
-      id: "728ed52fv",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "489e1d42c",
-      amount: 125,
-      status: "processing",
-      email: "example@gmail.com",
-    },
-    {
-      id: "728ed52fc",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "489e1d42d",
-      amount: 125,
-      status: "processing",
-      email: "example@gmail.com",
-    },
-    {
-      id: "728ed52fq",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "489e1d42e",
-      amount: 125,
-      status: "processing",
-      email: "example@gmail.com",
-    },
-  ];
+  // const data = [
+  //   {
+  //     id: "728ed52f",
+  //     amount: 100,
+  //     status: "pending",
+  //     email: "m@example.com",
+  //   },
+  //   {
+  //     id: "489e1d42",
+  //     amount: 125,
+  //     status: "processing",
+  //     email: "example@gmail.com",
+  //   },
+  //   {
+  //     id: "728ed52fe",
+  //     amount: 100,
+  //     status: "pending",
+  //     email: "m@example.com",
+  //   },
+  //   {
+  //     id: "489e1d42a",
+  //     amount: 125,
+  //     status: "processing",
+  //     email: "example@gmail.com",
+  //   },
+  //   {
+  //     id: "728ed52fa",
+  //     amount: 100,
+  //     status: "pending",
+  //     email: "m@example.com",
+  //   },
+  //   {
+  //     id: "489e1d42b",
+  //     amount: 125,
+  //     status: "processing",
+  //     email: "example@gmail.com",
+  //   },
+  //   {
+  //     id: "728ed52fv",
+  //     amount: 100,
+  //     status: "pending",
+  //     email: "m@example.com",
+  //   },
+  //   {
+  //     id: "489e1d42c",
+  //     amount: 125,
+  //     status: "processing",
+  //     email: "example@gmail.com",
+  //   },
+  //   {
+  //     id: "728ed52fc",
+  //     amount: 100,
+  //     status: "pending",
+  //     email: "m@example.com",
+  //   },
+  //   {
+  //     id: "489e1d42d",
+  //     amount: 125,
+  //     status: "processing",
+  //     email: "example@gmail.com",
+  //   },
+  //   {
+  //     id: "728ed52fq",
+  //     amount: 100,
+  //     status: "pending",
+  //     email: "m@example.com",
+  //   },
+  //   {
+  //     id: "489e1d42e",
+  //     amount: 125,
+  //     status: "processing",
+  //     email: "example@gmail.com",
+  //   },
+  // ];
 
   return (
     <Fragment>
