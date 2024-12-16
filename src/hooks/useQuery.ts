@@ -1,5 +1,7 @@
-import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
+
+import { useSearchParams } from "next/navigation";
+
 import { z } from "zod";
 
 /**
@@ -24,7 +26,7 @@ type QueryParseOptions<T extends Record<string, unknown>> = {
  * @returns The parsed query parameters object
  */
 export function useQuery<T extends Record<string, unknown>>(
-  options: QueryParseOptions<T> = {}
+  options: QueryParseOptions<T> = {},
 ): Partial<T> {
   const searchParams = useSearchParams();
 

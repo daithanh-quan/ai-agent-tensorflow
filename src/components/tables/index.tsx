@@ -1,12 +1,13 @@
 import React from "react";
-import { Table } from "src/components/ui/table";
 
-import { cn } from "src/lib/utils";
-import { DataTableProps, TableProps } from "./interface";
 import Tbody from "src/components/tables/tbody";
-import useTable from "./useTable";
+import { Table } from "src/components/ui/table";
+import { cn } from "src/lib/utils";
+
+import { DataTableProps, TableProps } from "./interface";
 import Paginator from "./paginator";
 import Thead from "./thead";
+import useTable from "./useTable";
 
 const CusTomTable = <TData, TValue>(
   {
@@ -24,7 +25,7 @@ const CusTomTable = <TData, TValue>(
     //----
     ...rest
   }: DataTableProps<TData, TValue> & TableProps,
-  ref: React.Ref<HTMLTableElement>
+  ref: React.Ref<HTMLTableElement>,
 ) => {
   const { table } = useTable({
     data,
@@ -37,7 +38,7 @@ const CusTomTable = <TData, TValue>(
       <div
         className={cn(
           "rounded-md border overflow-x-auto relative",
-          wrapperClassName
+          wrapperClassName,
         )}
       >
         <Table
@@ -45,7 +46,7 @@ const CusTomTable = <TData, TValue>(
           ref={ref}
           className={cn(
             "w-full border-collapse overflow-x-auto",
-            tableClassName
+            tableClassName,
           )}
         >
           <Thead
