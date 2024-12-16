@@ -3,7 +3,6 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  TableOptions,
   useReactTable,
 } from "@tanstack/react-table";
 import _ from "lodash";

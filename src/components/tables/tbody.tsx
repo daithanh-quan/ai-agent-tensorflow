@@ -1,10 +1,11 @@
 import React from "react";
+
 import { flexRender } from "@tanstack/react-table";
+import { Inbox } from "lucide-react";
 
 import { BodyTableProps, TableProps } from "src/components/tables/interface";
-import { cn } from "src/lib/utils";
 import { TableBody, TableCell, TableRow } from "src/components/ui/table";
-import { Icon, Inbox } from "lucide-react";
+import { cn } from "src/lib/utils";
 
 type Props<TData, TValue> = {} & BodyTableProps<TData, TValue> &
   Pick<
@@ -70,7 +71,7 @@ const Tbody = <TData, TValue>({
                 {
                   flexRender(
                     cell.column.columnDef.cell,
-                    cell.getContext()
+                    cell.getContext(),
                   ) as React.ReactNode
                 }
               </TableCell>
