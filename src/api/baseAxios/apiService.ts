@@ -4,58 +4,61 @@ import baseAxios from "./index";
 import { ErrorResponse } from "./interfaces";
 
 class ApiService {
-  private readonly endpoint: string;
-
-  constructor(endpoint: string) {
-    this.endpoint = endpoint;
-  }
-
-  async get<T>(params?: Record<string, any>): Promise<T> {
+  async get<T>(endpoint: string, params?: Record<string, any>): Promise<T> {
     try {
-      return await baseAxios.get(this.endpoint, { params });
+      return await baseAxios.get(endpoint, { params });
     } catch (error) {
       return this.handleError<T>(error);
     }
   }
 
   async getById<T>(
+    endpoint: string,
     id: string | number,
     params?: Record<string, any>,
   ): Promise<T> {
     try {
-      return await baseAxios.get(`${this.endpoint}/${id}`, { params });
+      return await baseAxios.get(`${endpoint}/${id}`, { params });
     } catch (error) {
       return this.handleError<T>(error);
     }
   }
 
-  async post<T, R = T>(data: T): Promise<R> {
+  async post<T, R = T>(endpoint: string, data: T): Promise<R> {
     try {
-      return await baseAxios.post(this.endpoint, data);
+      return await baseAxios.post(endpoint, data);
     } catch (error) {
       return this.handleError<R>(error);
     }
   }
 
-  async put<T, R = T>(id: string | number, data: T): Promise<R> {
+  async put<T, R = T>(
+    endpoint: string,
+    id: string | number,
+    data: T,
+  ): Promise<R> {
     try {
-      return await baseAxios.put(`${this.endpoint}/${id}`, data);
+      return await baseAxios.put(`${endpoint}/${id}`, data);
     } catch (error) {
       return this.handleError<R>(error);
     }
   }
 
-  async patch<T, R = T>(id: string | number, data: Partial<T>): Promise<R> {
+  async patch<T, R = T>(
+    endpoint: string,
+    id: string | number,
+    data: Partial<T>,
+  ): Promise<R> {
     try {
-      return await baseAxios.patch(`${this.endpoint}/${id}`, data);
+      return await baseAxios.patch(`${endpoint}/${id}`, data);
     } catch (error) {
       return this.handleError<R>(error);
     }
   }
 
-  async delete<R = any>(id: string | number): Promise<R> {
+  async delete<R = any>(endpoint: string, id: string | number): Promise<R> {
     try {
-      return await baseAxios.delete(`${this.endpoint}/${id}`);
+      return await baseAxios.delete(`${endpoint}/${id}`);
     } catch (error) {
       return this.handleError<R>(error);
     }
