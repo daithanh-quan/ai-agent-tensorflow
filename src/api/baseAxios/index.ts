@@ -1,10 +1,9 @@
-import { cookies } from "next/headers";
-import Router from "next/router";
+import { redirect } from "next/navigation";
 
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
-import { getIronSession } from "iron-session";
 
-import { SessionData } from "src/api/baseAxios/interfaces";
+import cookie from "src/lib/cookie";
+import { decrypt } from "src/utils/cryptoDecode";
 
 export const baseAxios = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
@@ -14,23 +13,13 @@ export const baseAxios = axios.create({
   },
 } as AxiosRequestConfig);
 
-const sessionOptions = {
-  password: process.env.SESSION_PASSWORD!,
-  cookieName: "myapp_session",
-  // Add any other iron-session configuration
-};
-
 // Add request interceptor to include token
 baseAxios.interceptors.request.use(async (config) => {
   try {
-    // Retrieve token from iron-session
-    const session = await getIronSession<SessionData>(
-      await cookies(),
-      sessionOptions,
-    );
+    const token = cookie.getToken();
 
-    if (session.token) {
-      config.headers["Authorization"] = `Bearer ${session.token}`;
+    if (token) {
+      config.headers["Authorization"] = `Bearer ${decrypt(token)}`;
     }
 
     return config;
@@ -56,10 +45,9 @@ baseAxios.interceptors.response.use(
     if (error.response) {
       switch (error.response.status) {
         case 401:
-          localStorage.removeItem("token");
-          sessionStorage.removeItem("token");
+          cookie.deleteToken();
 
-          Router.push("/login");
+          redirect("/login");
 
           break;
         case 400:
@@ -74,7 +62,8 @@ baseAxios.interceptors.response.use(
           return Promise.reject(error.response.data);
       }
 
-      return Promise.reject(error.response.data);
+      // @ts-ignore
+      return Promise.reject(error?.response.data);
     } else if (error.request) {
       return Promise.reject(error.request);
     } else {
