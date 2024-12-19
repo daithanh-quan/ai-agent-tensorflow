@@ -56,7 +56,7 @@ const PaginationLink = ({
         variant: isActive ? "default" : "ghost",
         size,
       }),
-      disabled && "cursor-not-allowed pointer-events-none",
+      disabled && "pointer-events-none cursor-not-allowed",
       className,
     )}
     {...props}

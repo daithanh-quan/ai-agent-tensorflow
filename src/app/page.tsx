@@ -11,6 +11,8 @@ import { Checkbox } from "src/components/ui/checkbox";
 import Modal from "src/components/ui/modal";
 import { useHistory } from "src/hooks/useHistory";
 
+// import { useGetPosts } from "src/queries/post/list";
+
 // import { useQuery } from "src/hooks/useQuery";
 
 export default function Home() {
@@ -131,8 +133,9 @@ export default function Home() {
 
   return (
     <Fragment>
-      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
         <Button>Hello</Button>
+
         <Button onClick={() => toast.success("toast")}>Toast</Button>
         <Button
           onClick={() =>
