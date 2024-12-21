@@ -19,7 +19,7 @@ const Thead = <TData,>({
   tableHeadClassName,
 }: Props<TData>) => {
   return (
-    <TableHeader className={cn("overflow-hidden ", tableHeaderClassName)}>
+    <TableHeader className={cn("overflow-hidden", tableHeaderClassName)}>
       {table.getHeaderGroups().map((headerGroup) => (
         <TableRow key={headerGroup.id} className={cn(tableRowClassName)}>
           {headerGroup.headers.map((header) => {

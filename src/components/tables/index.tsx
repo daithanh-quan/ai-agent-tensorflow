@@ -37,7 +37,7 @@ const CusTomTable = <TData, TValue>(
     <div>
       <div
         className={cn(
-          "rounded-md border overflow-x-auto relative",
+          "relative overflow-x-auto rounded-md border",
           wrapperClassName,
         )}
       >

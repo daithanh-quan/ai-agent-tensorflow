@@ -34,7 +34,7 @@ const Tbody = <TData, TValue>({
           >
             <div role="status" aria-label="loading">
               <svg
-                className="w-6 h-6 stroke-indigo-600 animate-spin "
+                className="h-6 w-6 animate-spin stroke-indigo-600"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,8 +84,8 @@ const Tbody = <TData, TValue>({
             colSpan={columns.length}
             className={cn("h-[500px] text-center", tableCellClassName)}
           >
-            <div className="flex items-center justify-center flex-wrap">
-              <div className="flex justify-center mb-4">
+            <div className="flex flex-wrap items-center justify-center">
+              <div className="mb-4 flex justify-center">
                 <Inbox />
               </div>
               <div className="w-full text-center">No results.</div>

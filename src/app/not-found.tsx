@@ -10,8 +10,8 @@ const NotFound = () => {
   const router = useRouter();
 
   return (
-    <section className="bg-white dark:bg-gray-900 ">
-      <div className="container min-h-screen px-6 py-12 mx-auto lg:flex lg:items-center lg:gap-12">
+    <section className="bg-white dark:bg-gray-900">
+      <div className="container mx-auto min-h-screen px-6 py-12 lg:flex lg:items-center lg:gap-12">
         <div className="wf-ull lg:w-1/2">
           <p className="text-sm font-medium text-blue-500 dark:text-blue-400">
             404 error
@@ -24,10 +24,10 @@ const NotFound = () => {
             some helpful links:
           </p>
 
-          <div className="flex items-center mt-6 gap-x-3">
+          <div className="mt-6 flex items-center gap-x-3">
             <button
               onClick={() => router.back()}
-              className="flex items-center justify-center w-1/2 px-5 py-2 text-sm text-gray-700 transition-colors duration-200 bg-white border rounded-lg gap-x-2 sm:w-auto dark:hover:bg-gray-800 dark:bg-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:border-gray-700"
+              className="flex w-1/2 items-center justify-center gap-x-2 rounded-lg border bg-white px-5 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-800 sm:w-auto"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const NotFound = () => {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-5 h-5 rtl:rotate-180"
+                className="h-5 w-5 rtl:rotate-180"
               >
                 <path
                   strokeLinecap="round"
@@ -49,16 +49,16 @@ const NotFound = () => {
 
             <Link
               href={"/"}
-              className="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto hover:bg-blue-600 dark:hover:bg-blue-500 dark:bg-blue-600"
+              className="w-1/2 shrink-0 rounded-lg bg-blue-500 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 sm:w-auto"
             >
               Take me home
             </Link>
           </div>
         </div>
 
-        <div className="relative w-full mt-12 lg:w-1/2 lg:mt-0">
+        <div className="relative mt-12 w-full lg:mt-0 lg:w-1/2">
           <Image
-            className="w-full max-w-lg mx-auto"
+            className="mx-auto w-full max-w-lg"
             src={image}
             alt="404"
             width={514}
