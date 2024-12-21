@@ -15,6 +15,8 @@ export const useGetPosts = <T>(options?: ReactQueryOptions<T>) => {
   //-----------------------------------
 
   //you can query on server
+//you can query on server
+export const useGetPosts = <T>(options?: ReactQueryOptions<T>) => {
   return useSuspenseQuery({
     queryKey: keys.posts(),
     queryFn: async () => {
