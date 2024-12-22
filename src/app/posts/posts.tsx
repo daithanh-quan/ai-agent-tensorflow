@@ -2,20 +2,13 @@
 
 import React from "react";
 
-import { useGetPosts } from "src/queries/post/list";
+import InfoPosts from "./info-posts";
 
 const Posts = () => {
-  const { data } = useGetPosts<Response.PostList>();
-
   return (
     <div>
       <h1>Posts</h1>
-      {data?.map((post) => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
-        </div>
-      ))}
+      <InfoPosts />
     </div>
   );
 };
