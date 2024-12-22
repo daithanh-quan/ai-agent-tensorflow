@@ -2,6 +2,6 @@ import React from "react";
 
 import Posts from "./posts";
 
-export default function Page() {
+export default async function Page() {
   return <Posts />;
 }
