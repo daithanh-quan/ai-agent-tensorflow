@@ -1,29 +1,38 @@
 import React from "react";
-import { useController, UseControllerProps } from "react-hook-form";
+import {
+  Control,
+  Path,
+  useController,
+  UseControllerProps,
+} from "react-hook-form";
 
 import Input from "src/components/ui/input";
 import { cn } from "src/lib/utils";
 
 export type InputFieldProps<T extends Record<string, any>> = {
-  controller: UseControllerProps<T>;
-  errorCol?: "w-2/4" | "w-full";
-  spanCol?: "w-2/4" | "w-full";
+  control: Control<T> | any;
+  name: Path<T>;
+
   className?: string;
+  wrapperClassName?: string;
+  errorClassName?: "w-2/4" | "w-full";
+  inputWrapClassName?: "w-2/4" | "w-full";
+
   label?: string;
   isRequired?: boolean;
   callbackOnchange?: (e: string) => void;
-  wrapperClassName?: string;
   leftChild?: React.ReactNode;
-} & React.HTMLProps<HTMLInputElement>;
+} & React.HTMLProps<HTMLInputElement> &
+  Omit<UseControllerProps<T>, "name" | "control">;
 
 function InputField<T extends Record<string, any>>(
   props: InputFieldProps<T>,
   ref: React.Ref<HTMLInputElement>,
 ) {
   const {
-    controller,
-    errorCol = "w-full",
-    spanCol = "w-full",
+    control,
+    errorClassName = "w-full",
+    inputWrapClassName = "w-full",
     isRequired = false,
     label,
     wrapperClassName,
@@ -32,7 +41,11 @@ function InputField<T extends Record<string, any>>(
     className,
     ...rest
   } = props;
-  const { fieldState, field } = useController<T>(controller);
+  const { fieldState, field } = useController<T>({
+    ...rest,
+    name: props.name,
+    control,
+  });
   const { error } = fieldState;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,7 +71,7 @@ function InputField<T extends Record<string, any>>(
       )}
 
       <div className="flex flex-wrap">
-        <div className={cn("relative", spanCol)}>
+        <div className={cn("relative", inputWrapClassName)}>
           {leftChild}
           <Input
             {...rest}
@@ -80,7 +93,7 @@ function InputField<T extends Record<string, any>>(
           />
         </div>
         {error && (
-          <div className={`${errorCol}`}>
+          <div className={`${errorClassName}`}>
             <p className={error ? "text-xs text-red-700" : ""}>
               {error.message}
             </p>
