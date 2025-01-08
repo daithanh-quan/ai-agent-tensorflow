@@ -1,7 +1,11 @@
-"use client";
-
 import React from "react";
-import { useController, UseControllerProps } from "react-hook-form";
+import {
+  Control,
+  FieldValues,
+  Path,
+  useController,
+  UseControllerProps,
+} from "react-hook-form";
 
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 
@@ -10,24 +14,28 @@ import { cn } from "src/lib/utils";
 
 import { Button } from "../ui/button";
 
-export type PasswordField<T extends Record<string, any>> = {
-  controller: UseControllerProps<T>;
+export type PasswordField<T extends FieldValues> = {
+  control: Control<T> | any;
+  name: Path<T>;
+
+  className?: string;
+  wrapperClassName?: string;
   errorColClassName?: "w-2/4" | "w-full";
   spanColClassName?: "w-2/4" | "w-full";
-  className?: string;
+
   label?: string;
   isRequired?: boolean;
   callbackOnchange?: (e: string) => void;
-  wrapperClassName?: string;
   leftChild?: React.ReactNode;
-} & React.HTMLProps<HTMLInputElement>;
+} & React.HTMLProps<HTMLInputElement> &
+  Omit<UseControllerProps<T>, "name" | "control">;
 
 function InputPwField<T extends Record<string, any>>(
   props: PasswordField<T>,
   ref: React.Ref<HTMLInputElement>,
 ) {
   const {
-    controller,
+    control,
     errorColClassName = "w-full",
     spanColClassName = "w-full",
     isRequired = false,
@@ -39,7 +47,11 @@ function InputPwField<T extends Record<string, any>>(
   } = props;
   const [showPassword, setShowPassword] = React.useState(false);
 
-  const { fieldState, field } = useController<T>(controller);
+  const { fieldState, field } = useController<T>({
+    ...rest,
+    name: props.name,
+    control,
+  });
   const { error } = fieldState;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,6 +78,7 @@ function InputPwField<T extends Record<string, any>>(
             ref={ref}
             value={field.value || ""}
             style={{ width: "100%" }}
+            type={showPassword ? "text" : "password"}
             onChange={onChange}
             className={cn(
               "border border-solid border-black focus:border-black focus:ring-black focus-visible:ring-black",

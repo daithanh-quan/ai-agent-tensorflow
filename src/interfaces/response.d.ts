@@ -5,5 +5,22 @@ declare namespace Response {
     body: string;
   };
 
+  export type User = {
+    id: string;
+    name: string;
+    surname: string;
+    role: string;
+  };
+
+  export type SignIn = {
+    data: {
+      token: string;
+    };
+  };
+
+  export type UserResponse = {
+    data: User;
+  };
+
   export type PostList = Post[];
 }

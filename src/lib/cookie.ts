@@ -1,23 +1,38 @@
 import { deleteCookie, getCookie, setCookie } from "cookies-next/client";
 
-const keys = {
+import { decrypt, encrypt } from "src/utils/cryptoDecode";
+
+export const keys = {
   token: "token",
+  me: "me",
 };
 
 class Cookie {
   setToken(token: string) {
-    setCookie(keys.token, token);
+    setCookie(keys.token, encrypt(token), { maxAge: 60 * 60 * 24 * 30 }); // 30 ngày
   }
 
   getToken() {
-    return getCookie(keys.token);
+    const token = getCookie(keys.token);
+    return token ? decrypt(token as string) : null;
   }
 
-  deleteToken() {
+  setMe(me: Response.User) {
+    setCookie(keys.me, encrypt(JSON.stringify(me)), {
+      maxAge: 60 * 60 * 24 * 30,
+    }); // 30 ngày
+  }
+
+  getMe() {
+    const me = getCookie(keys.me);
+    return me ? JSON.parse(decrypt(me as string)) : null;
+  }
+
+  SignOut() {
     deleteCookie(keys.token);
+    deleteCookie(keys.me);
   }
 }
 
 const cookie = new Cookie();
-
 export default cookie;

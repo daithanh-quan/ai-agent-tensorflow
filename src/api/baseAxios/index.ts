@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+import { getCookie } from "cookies-next/client";
 
 import cookie from "src/lib/cookie";
 import { decrypt } from "src/utils/cryptoDecode";
@@ -16,7 +17,7 @@ export const baseAxios = axios.create({
 // Add request interceptor to include token
 baseAxios.interceptors.request.use(async (config) => {
   try {
-    const token = cookie.getToken();
+    const token = getCookie("token");
 
     if (token) {
       config.headers["Authorization"] = `Bearer ${decrypt(token)}`;
@@ -45,7 +46,7 @@ baseAxios.interceptors.response.use(
     if (error.response) {
       switch (error.response.status) {
         case 401:
-          cookie.deleteToken();
+          cookie.SignOut();
 
           redirect("/login");
 
