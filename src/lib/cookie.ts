@@ -20,7 +20,7 @@ class Cookie {
   setMe(me: Response.User) {
     setCookie(keys.me, encrypt(JSON.stringify(me)), {
       maxAge: 60 * 60 * 24 * 30,
-    }); // 30 ngày
+    }); // 30 dates
   }
 
   getMe() {
@@ -28,7 +28,7 @@ class Cookie {
     return me ? JSON.parse(decrypt(me as string)) : null;
   }
 
-  SignOut() {
+  signOut() {
     deleteCookie(keys.token);
     deleteCookie(keys.me);
   }

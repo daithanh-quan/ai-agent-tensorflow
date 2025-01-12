@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 
 import _ from "lodash";
 
+import Layout from "src/components/layouts/admin/main";
 import { keys } from "src/lib/cookie";
 import { decrypt } from "src/utils/cryptoDecode";
 
@@ -16,7 +17,9 @@ export default async function AdminLayout({
   const cookieStore = await cookies();
   const token = cookieStore.get(keys.me);
   const user = cookieStore.get(keys.me);
-  const role = _.get(JSON.parse(decrypt(user?.value as string)), ["surname"]);
+  const role =
+    user?.value &&
+    _.get(JSON.parse(decrypt(user?.value as string)), ["surname"]);
 
   if (!token) {
     redirect("/login");
@@ -26,5 +29,9 @@ export default async function AdminLayout({
     redirect("/");
   }
 
-  return <div className="admin-page">{children}</div>;
+  return (
+    <Layout>
+      <div className="admin-page container mx-auto py-4">{children}</div>
+    </Layout>
+  );
 }

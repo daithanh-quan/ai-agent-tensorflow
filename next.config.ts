@@ -7,6 +7,16 @@ const nextConfig: NextConfig = {
     SESSION_PASSWORD: process.env.SESSION_PASSWORD,
     SECRET_KEY: process.env.SECRET_KEY,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
