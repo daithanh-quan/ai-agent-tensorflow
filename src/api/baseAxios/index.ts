@@ -46,7 +46,7 @@ baseAxios.interceptors.response.use(
     if (error.response) {
       switch (error.response.status) {
         case 401:
-          cookie.SignOut();
+          cookie.signOut();
 
           redirect("/login");
 
