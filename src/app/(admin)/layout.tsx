@@ -15,11 +15,10 @@ export default async function AdminLayout({
   children: React.ReactNode;
 }>) {
   const cookieStore = await cookies();
-  const token = cookieStore.get(keys.me);
+  const token = cookieStore.get(keys.token);
   const user = cookieStore.get(keys.me);
   const role =
-    user?.value &&
-    _.get(JSON.parse(decrypt(user?.value as string)), ["surname"]);
+    user?.value && _.get(JSON.parse(decrypt(user?.value as string)), "surname");
 
   if (!token) {
     redirect("/login");

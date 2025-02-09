@@ -6,14 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import {
-  Calendar,
-  ChevronRight,
-  LayoutDashboard,
-  Search,
-  Settings,
-  User,
-} from "lucide-react";
+import { ChevronRight, LayoutDashboard, User } from "lucide-react";
 
 import SidebarFooter from "src/components/layouts/admin/FooterSidebar";
 import {
@@ -49,24 +42,9 @@ const items: MenuItem[] = [
     icon: LayoutDashboard,
   },
   {
-    title: "User",
-    url: "/user",
+    title: "ThreeJs",
+    url: "/threejs",
     icon: User,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
   },
 ];
 
