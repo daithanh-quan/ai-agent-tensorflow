@@ -3,7 +3,6 @@ import { redirect } from "next/navigation";
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
 import cookie from "src/lib/cookie";
-import { decrypt } from "src/utils/cryptoDecode";
 
 export const baseAxios = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
@@ -19,7 +18,7 @@ baseAxios.interceptors.request.use(async (config) => {
     const token = cookie.getToken();
 
     if (token) {
-      config.headers["Authorization"] = `Bearer ${decrypt(token)}`;
+      config.headers["Authorization"] = `Bearer ${token}`;
     }
 
     return config;

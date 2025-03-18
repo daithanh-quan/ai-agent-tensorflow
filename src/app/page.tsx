@@ -2,6 +2,7 @@
 
 import React, { Fragment } from "react";
 
+import { CheckedState } from "@radix-ui/react-checkbox";
 import { ColumnDef, TableOptions } from "@tanstack/react-table";
 import { toast } from "sonner";
 
@@ -27,7 +28,8 @@ export default function Home() {
         <Checkbox
           checked={
             table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && "indeterminate")
+            ((table.getIsSomePageRowsSelected() &&
+              "indeterminate") as CheckedState)
           }
           onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
           aria-label="Select all"
