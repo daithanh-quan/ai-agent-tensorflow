@@ -1,12 +1,12 @@
-import type { NextConfig } from "next";
+import { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-
   env: {
     API_URL: process.env.NEXT_PUBLIC_API_URL,
     SESSION_PASSWORD: process.env.SESSION_PASSWORD,
   },
 };
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin();
+export default withNextIntl(nextConfig);

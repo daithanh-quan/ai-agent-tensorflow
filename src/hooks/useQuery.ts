@@ -27,14 +27,14 @@ type QueryParseOptions<T extends Record<string, unknown>> = {
  */
 export function useQuery<T extends Record<string, unknown>>(
   options: QueryParseOptions<T> = {},
-): Partial<T> | T | object {
+): Partial<T> {
   const searchParams = useSearchParams();
 
   return useMemo(() => {
     // If no schema is provided, convert all parameters to their raw string values
     if (!options.schema) {
       const params: Record<string, string> = {};
-      for (const [key] of searchParams.entries()) {
+      for (const [key] of searchParams.entries() as any) {
         params[key] = searchParams.get(key)!;
       }
       return params as Partial<T>;
@@ -43,7 +43,7 @@ export function useQuery<T extends Record<string, unknown>>(
     try {
       // Create an object with all current search params
       const paramsObject: Record<string, string> = {};
-      for (const [key] of searchParams.entries()) {
+      for (const [key] of searchParams.entries() as any) {
         paramsObject[key] = searchParams.get(key)!;
       }
 
