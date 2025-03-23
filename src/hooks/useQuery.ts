@@ -27,7 +27,7 @@ type QueryParseOptions<T extends Record<string, unknown>> = {
  */
 export function useQuery<T extends Record<string, unknown>>(
   options: QueryParseOptions<T> = {},
-): Partial<T> {
+): Partial<T> | T | object {
   const searchParams = useSearchParams();
 
   return useMemo(() => {
