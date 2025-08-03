@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container } from "@/components/common";
-import { List } from "@/components/ui";
+import { Container } from "../../components/common";
+import { List } from "../../components/ui";
 
 const Exercise = () => {
   const mockExercisesData = [

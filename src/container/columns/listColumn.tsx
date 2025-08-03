@@ -3,16 +3,16 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import column1 from "@/assets/images/column-1.jpg";
-import column2 from "@/assets/images/column-2.jpg";
-import column3 from "@/assets/images/column-3.jpg";
-import column4 from "@/assets/images/column-4.jpg";
-import column5 from "@/assets/images/column-5.jpg";
-import column6 from "@/assets/images/column-6.jpg";
-import column7 from "@/assets/images/column-7.jpg";
-import column8 from "@/assets/images/column-8.jpg";
-import { Container } from "@/components/common";
-import { Button, List } from "@/components/ui";
+import column1 from "../../assets/images/column-1.jpg";
+import column2 from "../../assets/images/column-2.jpg";
+import column3 from "../../assets/images/column-3.jpg";
+import column4 from "../../assets/images/column-4.jpg";
+import column5 from "../../assets/images/column-5.jpg";
+import column6 from "../../assets/images/column-6.jpg";
+import column7 from "../../assets/images/column-7.jpg";
+import column8 from "../../assets/images/column-8.jpg";
+import { Container } from "../../components/common";
+import { Button, List } from "../../components/ui";
 
 const ListColumn = () => {
   const t = useTranslations("Column");

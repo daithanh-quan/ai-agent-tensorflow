@@ -7,7 +7,7 @@ export default async function Layout(props: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await props.params;
-  setRequestLocale(locale);
+  setRequestLocale(locale || "jp");
 
   return <div className="public">{props.children}</div>;
 }

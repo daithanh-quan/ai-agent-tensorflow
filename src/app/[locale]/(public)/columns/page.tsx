@@ -1,6 +1,6 @@
 import React from "react";
 
-import Container from "@/container/columns";
+import Container from "../../../../container/columns";
 
 const Page = () => {
   return <Container />;

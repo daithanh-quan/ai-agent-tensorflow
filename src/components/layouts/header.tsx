@@ -5,17 +5,17 @@ import React from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
-import { Container } from "@/components/common";
+import { Container } from "../../components/common";
 import {
   BarIcon,
   CancelIcon,
   ChallengeIcon,
   NotificationIcon,
   RecordIcon,
-} from "@/components/svgs";
-import { Dropdown, DropdownItem, NavLink } from "@/components/ui";
-import { Link, usePathname } from "@/i18n/navigation";
-import { cn } from "@/lib/utils";
+} from "../../components/svgs";
+import { Dropdown, DropdownItem, NavLink } from "../../components/ui";
+import { Link, usePathname } from "../../i18n/navigation";
+import { cn } from "../../lib/utils";
 
 const Header = () => {
   const locale = useLocale();

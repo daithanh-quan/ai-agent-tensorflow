@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "../../../lib/utils";
 
 interface DropdownProps {
   trigger?: React.ReactNode | ((v: boolean) => React.ReactNode);

@@ -2,8 +2,8 @@ import React from "react";
 
 import { useTranslations } from "next-intl";
 
-import { Container } from "@/components/common";
-import { Button, List } from "@/components/ui";
+import { Container } from "../../components/common";
+import { Button, List } from "../../components/ui";
 
 const Diary = () => {
   const t = useTranslations();

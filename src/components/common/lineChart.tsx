@@ -4,7 +4,6 @@ import React from "react";
 
 import { useTranslations } from "next-intl";
 
-import { cn } from "@/lib/utils";
 import {
   CartesianGrid,
   Line,
@@ -13,6 +12,8 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+
+import { cn } from "../../lib/utils";
 
 type Props = {
   className?: string;

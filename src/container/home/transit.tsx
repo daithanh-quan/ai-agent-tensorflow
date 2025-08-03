@@ -3,10 +3,10 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import polygon from "@/assets/images/polygon.png";
-import { Container } from "@/components/common";
-import { KnifeForkIcon, SnackIcon } from "@/components/svgs";
-import { List } from "@/components/ui";
+import polygon from "../../assets/images/polygon.png";
+import { Container } from "../../components/common";
+import { KnifeForkIcon, SnackIcon } from "../../components/svgs";
+import { List } from "../../components/ui";
 
 const items = [
   {

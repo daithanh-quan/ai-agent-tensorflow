@@ -8,7 +8,7 @@ import React from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
-import { Footer, Header } from "@/components/layouts";
+import { Footer, Header } from "../components/layouts";
 
 const notoSansJp = Noto_Sans_JP({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -32,10 +32,10 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
 
-  setRequestLocale(locale);
+  setRequestLocale(locale || "jp");
 
   return (
-    <html lang={locale}>
+    <html lang={locale || "jp"}>
       <head>
         <link rel="icon" type="image/png" href="/logo.png" />
       </head>

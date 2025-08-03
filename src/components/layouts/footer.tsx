@@ -2,8 +2,8 @@ import React from "react";
 
 import { useTranslations } from "next-intl";
 
-import { Container } from "@/components/common";
-import { Link } from "@/i18n/navigation";
+import { Container } from "../../components/common";
+import { Link } from "../../i18n/navigation";
 
 const Footer = () => {
   const t = useTranslations("footer");

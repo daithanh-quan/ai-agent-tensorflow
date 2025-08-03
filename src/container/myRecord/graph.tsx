@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container, LineChart } from "@/components/common";
-import { Button } from "@/components/ui";
+import { Container, LineChart } from "../../components/common";
+import { Button } from "../../components/ui";
 
 const Graph = () => {
   return (
