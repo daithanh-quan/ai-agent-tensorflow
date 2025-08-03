@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 
-import { ScrollTopIcon } from "src/components/svgs";
-import { cn } from "src/lib/utils";
+import { ScrollTopIcon } from "@/components/svgs";
+import { cn } from "@/lib/utils";
 
 type Props = {
   className?: string;

@@ -3,15 +3,15 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import d01 from "src/assets/images/d01.jpg";
-import d02 from "src/assets/images/d02.jpg";
-import l01 from "src/assets/images/l01.jpg";
-import l02 from "src/assets/images/l02.jpg";
-import l03 from "src/assets/images/l03.jpg";
-import m01 from "src/assets/images/m01.jpg";
-import s01 from "src/assets/images/s01.jpg";
-import { Container } from "src/components/common";
-import { Button, List } from "src/components/ui";
+import d01 from "@/assets/images/d01.jpg";
+import d02 from "@/assets/images/d02.jpg";
+import l01 from "@/assets/images/l01.jpg";
+import l02 from "@/assets/images/l02.jpg";
+import l03 from "@/assets/images/l03.jpg";
+import m01 from "@/assets/images/m01.jpg";
+import s01 from "@/assets/images/s01.jpg";
+import { Container } from "@/components/common";
+import { Button, List } from "@/components/ui";
 
 const meals = [
   {

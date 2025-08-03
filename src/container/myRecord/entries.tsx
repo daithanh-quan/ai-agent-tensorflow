@@ -3,11 +3,11 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import MyRecommend1 from "src/assets/images/MyRecommend-1.jpg";
-import MyRecommend2 from "src/assets/images/MyRecommend-2.jpg";
-import MyRecommend3 from "src/assets/images/MyRecommend-3.jpg";
-import { Container } from "src/components/common";
-import { List } from "src/components/ui";
+import MyRecommend1 from "@/assets/images/MyRecommend-1.jpg";
+import MyRecommend2 from "@/assets/images/MyRecommend-2.jpg";
+import MyRecommend3 from "@/assets/images/MyRecommend-3.jpg";
+import { Container } from "@/components/common";
+import { List } from "@/components/ui";
 
 const Entries = () => {
   const t = useTranslations("MyRecord");

@@ -2,8 +2,8 @@ import React from "react";
 
 import { useTranslations } from "next-intl";
 
-import { Container } from "src/components/common";
-import { List } from "src/components/ui";
+import { Container } from "@/components/common";
+import { List } from "@/components/ui";
 
 const Recommends = () => {
   const t = useTranslations("Column");

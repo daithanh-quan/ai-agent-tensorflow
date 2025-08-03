@@ -8,7 +8,7 @@ import React from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
-import { Footer, Header } from "src/components/layouts";
+import { Footer, Header } from "@/components/layouts";
 
 const notoSansJp = Noto_Sans_JP({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

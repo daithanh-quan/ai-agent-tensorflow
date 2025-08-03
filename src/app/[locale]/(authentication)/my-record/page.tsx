@@ -1,6 +1,6 @@
 import React from "react";
 
-import Container from "src/container/myRecord";
+import Container from "@/container/myRecord";
 
 const Page = () => {
   return <Container />;

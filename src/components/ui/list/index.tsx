@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { cn } from "src/lib/utils";
+import { cn } from "@/lib/utils";
 
 type InfiniteScrollProps = {
   readMore?: () => void;

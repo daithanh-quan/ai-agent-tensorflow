@@ -2,8 +2,8 @@ import React from "react";
 
 import Image from "next/image";
 
-import banner from "src/assets/images/banner.png";
-import textBanner from "src/assets/images/main_photo_text.png";
+import banner from "@/assets/images/banner.png";
+import textBanner from "@/assets/images/main_photo_text.png";
 
 const Banner = () => {
   return (

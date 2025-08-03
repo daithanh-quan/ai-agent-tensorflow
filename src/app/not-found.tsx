@@ -2,8 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
-// @ts-ignore
-import image from "src/assets/images/not-found.jpg";
+import image from "@/assets/images/not-found.jpg";
 
 const NotFound = () => {
   const t = useTranslations("NotFound");

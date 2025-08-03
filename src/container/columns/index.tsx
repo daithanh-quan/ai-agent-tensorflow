@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { ScrollToTop } from "src/components/common";
+import { ScrollToTop } from "@/components/common";
 
 import ListColumn from "./listColumn";
 import Recommends from "./recommends";
