@@ -9,5 +9,5 @@ export default async function Layout(props: {
   const { locale } = await props.params;
   setRequestLocale(locale);
 
-  return <div className="public">{props.children}</div>;
+  return <div className="auth">{props.children}</div>;
 }

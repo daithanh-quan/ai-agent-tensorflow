@@ -1,6 +1,66 @@
 {
-  "home": {
-    "title": "Welcome to the Home Page",
-    "description": "This is the home page content."
+  "header": {
+    "My Record": "My Record",
+    "Challenge": "Challenge",
+    "Notifications": "Notifications",
+    "Target": "Target",
+    "Weight Graph": "Weight Graph",
+    "Selected course": "Selected course",
+    "Column list": "Column list",
+    "Setting": "Setting"
+  },
+  "graph": {
+    "Achievement Rate": "Achievement Rate"
+  },
+  "meal_categories": {
+    "Morning": "Morning",
+    "Lunch": "Lunch",
+    "Dinner": "Dinner",
+    "Snack": "Snack"
+  },
+  "button": {
+    "View more records": "View more records",
+    "See more of my diary": "See more of my diary"
+  },
+  "footer": {
+    "Register": "Register",
+    "Operating Company": "Operating Company",
+    "Terms of Use": "Terms of Use",
+    "Privacy Policy": "Privacy Policy",
+    "Legal Notice (Based on the Act on Specified Commercial Transactions)": "Legal Notice (Based on the Act on Specified Commercial Transactions)",
+    "Contact Us": "Contact Us"
+  },
+  "NotFound": {
+    "Page not found": "Page not found",
+    "The page you are looking for does not exist": "The page you are looking for does not exist"
+  },
+  "Column": {
+    "Recommend": "Recommend",
+    "Diet": "Diet",
+    "Beauty": "Beauty",
+    "Health": "Health",
+    "Description": "Eat fish for a healthy mind and body! The benefits of eating fish that you should know...",
+    "Fish dishes": "#Fish dishes",
+    "Japanese Food": "#Japanese Food",
+    "DHA": "#DHA"
+  },
+  "MyRecord": {
+    "Record your body": "Record your body",
+    "Record your exercise": "Record your exercise",
+    "My diary": "My diary"
+  },
+  "month": {
+    "Jan": "Jan",
+    "Feb": "Feb",
+    "Mar": "Mar",
+    "Apr": "Apr",
+    "May": "May",
+    "Jun": "Jun",
+    "Jul": "Jul",
+    "Aug": "Aug",
+    "Sep": "Sep",
+    "Oct": "Oct",
+    "Nov": "Nov",
+    "Dec": "Dec"
   }
 }

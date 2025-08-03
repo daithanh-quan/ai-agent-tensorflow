@@ -1,0 +1,66 @@
+{
+  "header": {
+    "My Record": "自分の記録",
+    "Challenge": "チャレンジ",
+    "Notifications": "お知らせ",
+    "Target": "目標",
+    "Weight Graph": "体重グラフ",
+    "Selected course": "選択中のコース",
+    "Column list": "コラム一覧",
+    "Setting": "設定"
+  },
+  "graph": {
+    "Achievement Rate": "達成率"
+  },
+  "meal_categories": {
+    "Morning": "朝食",
+    "Lunch": "昼食",
+    "Dinner": "夕食",
+    "Snack": "間食"
+  },
+  "button": {
+    "View more records": "記録をもっと見る",
+    "See more of my diary": "自分の日記をもっと見る"
+  },
+  "footer": {
+    "Register": "会員登録",
+    "Operating Company": "運営会社",
+    "Terms of Use": "利用規約",
+    "Privacy Policy": "個人情報の取扱について",
+    "Legal Notice (Based on the Act on Specified Commercial Transactions)": "特定商取引法に基づく表記",
+    "Contact Us": "お問い合わせ"
+  },
+  "NotFound": {
+    "Page not found": "ページが見つかりません",
+    "The page you are looking for does not exist": "お探しのページは存在しません。"
+  },
+  "Column": {
+    "Recommend": "オススメ",
+    "Diet": "ダイエット",
+    "Beauty": "美容",
+    "Health": "健康",
+    "Description": "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
+    "Fish dishes": "#魚料理",
+    "Japanese Food": "#和食",
+    "DHA": "#DHA"
+  },
+  "MyRecord": {
+    "Record your body": "自分のカラダの記録",
+    "Record your exercise": "自分の運動の記録",
+    "My diary": "自分の日記"
+  },
+  "month": {
+    "Jan": "1月",
+    "Feb": "2月",
+    "Mar": "3月",
+    "Apr": "4月",
+    "May": "5月",
+    "Jun": "6月",
+    "Jul": "7月",
+    "Aug": "8月",
+    "Sep": "9月",
+    "Oct": "10月",
+    "Nov": "11月",
+    "Dec": "12月"
+  }
+}
